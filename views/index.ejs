@@ -1,0 +1,20 @@
+<%- include ('./partials/header') %>
+
+<h1 class="text-center mb-4 mt-5">RESTful Blog Posts App</h1>
+
+<div class="text-center mb-3"><a href="/blogs/new" class="btn btn-dark text-center">Create a new blog</a></div>
+
+<% blogs.forEach(function(blog){ %>
+<div class="container media mt-2 mb-5 jumbotron">
+    <img class="align-self-start mr-3 img-thumbnail index-page-img " src="<%= blog.image %>" />
+    <div class="media-body">
+        <h2 class="mt-3"><%= blog.title %></h2>
+        <p class="font-weight-light"><%= blog.created.toDateString() %></p>
+        <p class="font-weight-bold"> <%= blog.body.substring(0,Math.min(100, blog.body.length)) %>...<a
+                href="/blogs/<%= blog._id%>"> Read more </a></p>
+
+    </div>
+</div>
+<% })%>
+
+<%- include ('./partials/footer') %>

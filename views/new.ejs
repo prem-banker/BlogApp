@@ -1,0 +1,50 @@
+<!-- <form action="/blogs" method="POST">
+    <input type="text" placeholder="title" name="body[title]">
+    <input type="text" placeholder="image" name="body[image]">
+    <input type="text" placeholder="content goes here..." name="body[body]">
+    <input type="submit">
+</form> -->
+
+<!-- <form action="/blogs" method="POST">
+    <input type="text" placeholder="title" name="title">
+    <input type="text" placeholder="image" name="image">
+    <textarea name="body"></textarea>
+    <input type="submit">
+</form> -->
+
+
+
+<%- include ('./partials/header') %>
+
+<div class="container  mt-2 mb-5 jumbotron ">
+
+
+    <h1> Make a new Blog !!</h1>
+
+    <form action="/blogs" method="POST">
+        <div class="form-group row">
+            <div class="col-6">
+                <label for="blog-title">Blog Title</label>
+                <input type="text" class="form-control" id="blog-title" name="title" placeholder="title">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-6">
+                <label for="blog-image">Blog Image URL</label>
+                <input type="text" class="form-control" id="blog-image" placeholder="image" name="image">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="blog-body">Example textarea</label>
+            <textarea class="form-control" id="blog-body" rows="10" name="body"></textarea>
+        </div>
+        <input type="submit" class="btn btn-success" value="Save changes "
+            onclick="return confirm('Confirm changes ?');">
+    </form>
+    <a class="mt-2 btn btn-secondary list-inline-item" href="/blogs"> Back </a>
+
+</div>
+
+
+<%- include ('./partials/footer') %>
